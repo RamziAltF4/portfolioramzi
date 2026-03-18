@@ -48,30 +48,29 @@ const SocialButtons = () => {
   <FaLinkedin size={28} />
 </a>
 
-  <a 
+  <button 
   className="card discord"
   onClick={() => {
-  const text = "1ce_blu3";
+    const text = "1ce_blu3";
 
-  if (navigator.clipboard) {
-    navigator.clipboard.writeText(text)
-      .then(() => toast.success("Username Discord copied!"))
-      .catch(() => toast.error("Gagal copy ❌"));
-  } else {
-    // fallback lama (aman semua browser)
-    const textarea = document.createElement("textarea");
-    textarea.value = text;
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand("copy");
-    document.body.removeChild(textarea);
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text)
+        .then(() => toast.success("Username Discord copied!"))
+        .catch(() => toast.error("Gagal copy ❌"));
+    } else {
+      const textarea = document.createElement("textarea");
+      textarea.value = text;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
 
-    toast.success("Username Discord copied!");
-  }
-}}
+      toast.success("Username Discord copied!");
+    }
+  }}
 >
   <FaDiscord size={28} />
-</a>
+</button>
 
 
       </div>
