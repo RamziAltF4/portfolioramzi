@@ -63,7 +63,13 @@ const StyledWrapper = styled.div`
     /* TAMBAHKAN: pastikan tidak ada border atau outline */
     border: none;
     outline: none;
-  }
+
+    @media (max-width: 768px) {
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
 
   .link {
     display: inline-flex;

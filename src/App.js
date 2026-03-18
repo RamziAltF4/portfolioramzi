@@ -189,6 +189,10 @@ const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+
+  @media (max-width: 768px) {
+    padding: 0 15px;
+  }
 `;
 
 const Header = styled.header`
@@ -204,6 +208,11 @@ const Header = styled.header`
   /* TAMBAHKAN: pastikan tidak ada border atau shadow yang mengganggu */
   border: none;
   box-shadow: none;
+
+    @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 15px;
+  }
 `;
 const PlaceholderImage = styled.div`
   width: 400px;
@@ -301,9 +310,18 @@ const CtaButton = styled.button`
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
+  display: flex;           /* ganti block ke flex */
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+
   &:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+  }
+
+  @media (max-width: 768px) {
+    /* responsive centering, kalau perlu */
+    width: 100%;
   }
 `;
 
@@ -311,6 +329,9 @@ const HeroImage = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 768px) {
+    margin-top: 20px;
+}
 `;
 
 
